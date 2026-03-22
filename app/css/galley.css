@@ -1,0 +1,31 @@
+.galleyImg {
+    position: relative;
+    overflow: hidden;
+}
+
+.galleyImg:first-child {
+    grid-row: 1 / 3;
+}
+
+.sectionGallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 300px 300px;
+    min-height: 60svh;
+    max-width: 1600px;
+    gap: 4px;
+    margin-bottom: 120px;
+    margin: 0 auto;
+}
+
+.galleyImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.galleyImg img:hover {
+    transform: scale(1.01);
+}

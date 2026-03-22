@@ -1,0 +1,118 @@
+.planSection {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 120px 0px;
+}
+
+.plan:nth-of-type(1) {
+    background-color: #1a1a1a;
+    ;
+}
+
+.plan:nth-of-type(2) {
+    background-color: #e63312;
+}
+
+.plan:nth-of-type(3) {
+    background-color: #1a1a1a;
+    ;
+}
+
+.priceTag {
+    color: #8a8a8a;
+    letter-spacing: 1.2px;
+    margin-bottom: 20px;
+}
+
+.pricePeriod {
+    color: #8a8a8a;
+}
+
+.pricePlan {
+    font-size: 3.2em;
+}
+
+
+
+.listBenef ul {
+    list-style: none;
+    padding: 0;
+}
+
+.listBenef ul li {
+    padding-left: 20px;
+    position: relative;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.07);
+    padding: 10px;
+    padding-left: 0;
+    color: #8a8a8a;
+}
+
+.listBenef ul li::before {
+    content: " ";
+    width: 8px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -15px;
+    background-color: red;
+}
+
+.plan:nth-of-type(2) .pricePeriod,
+.plan:nth-of-type(2) .priceTag,
+.plan:nth-of-type(2) ul li {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.plan:nth-of-type(2) .listBenef ul li::before {
+    background-color: white;
+}
+
+.plan:nth-of-type(2) .listBenef ul li {
+    border-color: #ffffff26;
+}
+
+.plan {
+    padding: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.07);
+
+}
+
+.planContainer {
+    display: grid;
+    gap: 20px;
+    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.priceCard {
+    margin-bottom: 50px;
+}
+
+.plan a {
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 15px 30px;
+    border: 1px solid #ffffff40;
+    transition: border-color 0.2s, color 0.2s;
+    cursor: pointer;
+    letter-spacing: 1.2px;
+    display: block;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.plan:nth-of-type(2) a {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.plan a:hover {
+    border-color: white;
+}
+
+.plan:hover {
+    border: 2px solid rgba(255, 255, 255, 0.156);
+    transition: .3s ease;
+
+}

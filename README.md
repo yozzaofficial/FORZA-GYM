@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏋️‍♂️ FORZA AI Coach
 
-## Getting Started
+AI-powered fitness assistant built with Next.js that provides smart answers about gym information and generates personalized workout plans.
 
-First, run the development server:
+## 🚀 Features
+
+* 🤖 AI chat assistant for gym support
+* 📅 Answers about schedules, classes, and services
+* 🧠 Semantic search with embeddings (custom knowledge base)
+* 💪 Generates structured workout plans (gym, boxing, yoga)
+* ⚡ Fast and lightweight (optimized for low cost)
+
+## 🧠 How it works
+
+1. User sends a message
+2. The system generates an embedding of the query
+3. It finds the most relevant data using cosine similarity
+4. Context is sent to the AI model
+5. AI generates a response or a workout plan
+
+## 🛠 Tech Stack
+
+* Next.js (App Router)
+* React
+* OpenAI API
+* Embeddings (text-embedding-3-small)
+* Vector similarity search (cosine similarity)
+
+## 💡 Use Cases
+
+* Gym websites
+* Fitness SaaS tools
+* Personal trainer assistants
+* Customer support automation
+
+## ⚙️ Setup
+
+1. Clone the repo
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Add your API key
+
+```
+OPENAI_API_KEY=your_key_here
+```
+
+4. Run the project
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📈 Future Improvements
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* Chat memory
+* User profiles
+* Subscription system
+* Analytics & usage tracking
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+💬 Built to be scalable, low-cost, and ready for real-world use.

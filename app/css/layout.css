@@ -1,0 +1,141 @@
+.mainHeader {
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    align-items: center;
+}
+
+.mainHeaderContainer {
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px;
+
+    background-color: black;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: 800;
+    letter-spacing: 1.9px;
+}
+
+.logo span {
+    color: #e63312;
+
+}
+
+.mainNav {
+    height: 100%;
+}
+
+.mainNav ul {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    align-items: center;
+}
+
+.mainNav ul li a {
+    color: rgb(138, 138, 138);
+
+}
+
+.mainNav ul li a:hover {
+    color: white;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.mainNav ul li.getStartedButton a {
+    color: white;
+    background-color: #e63312;
+    padding: 13px 20px;
+    border-radius: 3px;
+}
+
+.mainNav ul li.getStartedButton a:hover {
+    background-color: #e63212a7;
+    transition: .3s ease;
+
+}
+
+.profile {
+    padding: 12px;
+    background-color: rgb(255, 102, 0);
+    display: inline-block;
+    border-radius: 50%;
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.profile::after {
+    content: " ";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #22ff00;
+    position: absolute;
+    border: 2px solid black;
+    left: 60%;
+    top: 60%;
+}
+
+.mainFooter {
+    background-color: #1a1a1a;
+}
+
+.footerContainer {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 50px 0px;
+}
+
+.footer-brand p {
+    color: #8a8a8a;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+.footer-col .colTitle {
+    color: #8a8a8a;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin: 20px 0px;
+}
+
+.footer-col ul li:hover {
+    color: #e63312;
+}
+
+.footerGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #8a8a8a;
+}
+
+.footerBottom {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}

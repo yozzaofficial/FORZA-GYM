@@ -1,0 +1,134 @@
+.heroSection {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-top: 130px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100svh;
+}
+
+.heroEyebrow {
+    color: #e63312;
+    letter-spacing: 1.3px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 9em;
+    line-height: 0.9;
+    letter-spacing: 2.3px;
+    unicode-bidi: isolate;
+    display: block;
+    margin-bottom: 40px;
+}
+
+h1 span {
+    color: #e63312;
+    font-family: "Bebas Neue", sans-serif;
+
+}
+
+.heroSub {
+    color: #8a8a8a;
+    line-height: 1.5;
+    letter-spacing: 1.2px;
+    font-weight: 300;
+    font-size: 1.05em;
+    margin-bottom: 50px;
+}
+
+.heroCTA {
+    margin-bottom: 70px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+}
+
+.heroCTA a:first-child {
+    background-color: #e63312;
+    color: white;
+    padding: 20px 30px;
+    font-weight: 500;
+    border-radius: 3px;
+    font-size: 1.2em;
+}
+
+.heroCTA a:last-child {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.711);
+    color: white;
+    padding: 20px 30px;
+    font-weight: 500;
+    border-radius: 3px;
+    font-size: 1.2em;
+}
+
+.heroCTA a:last-child:hover {
+    border-color: white;
+    transition: .3s ease;
+}
+
+.heroCTA a:first-child:hover {
+    transition: .3s ease;
+    background-color: #e63212c6;
+
+}
+
+.heroStats {
+    display: flex;
+    gap: 70px;
+}
+
+.statsNum {
+    font-size: 3em;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.statsNum span {
+    color: #e63312;
+    font-family: "Bebas Neue", sans-serif;
+    margin-left: 5px;
+
+}
+
+.statsLabel {
+    color: #8a8a8a;
+}
+
+.heroImg {
+    position: relative;
+}
+
+.imgHero {
+    object-fit: cover;
+    object-position: center;
+}
+
+.heroBadge {
+    position: absolute;
+    background-color: #e63312;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    bottom: 0;
+    right: 5%;
+}
+
+.heroBadge p {
+    letter-spacing: 1.2px;
+    color: rgb(245, 242, 236);
+    font-size: 0.8em;
+}
+
+.heroBadge span {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.8em;
+    letter-spacing: 1.3px;
+}

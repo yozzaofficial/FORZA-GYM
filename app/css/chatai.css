@@ -1,0 +1,194 @@
+.chatContainer {
+    width: 800px;
+
+}
+
+.chatHeader {
+    background-color: #2e2e2e;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.AIProfile {
+    font-size: 1.5em;
+    background-color: #e63312;
+    padding: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.AIInfo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.AIStatus {
+    color: #22c55e;
+    padding-left: 10px;
+    position: relative;
+}
+
+.AIStatus::before {
+    content: " ";
+    width: 7px;
+    height: 7px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+    animation: aiBadgeAnimation 2s infinite alternate;
+}
+
+.chatHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.chatContainer {
+    position: relative;
+    left: 50%;
+    top: 120px;
+    border: 1px solid #8a8a8a3c;
+    border: 10px
+}
+
+.chatMessages {
+    background-color: black;
+    height: 700px;
+    overflow: scroll;
+    padding: 20px;
+    position: relative;
+}
+
+.chatText {
+    min-height: 50px;
+    background-color: black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 1px solid #8a8a8a3c;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#chatAI {
+    width: 90%;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border-radius: 40px;
+    background-color: #2e2e2e;
+    outline: none;
+    border: none
+}
+
+.chatSubmit {
+    background-color: #e63312;
+    color: white;
+    padding: 14px;
+    font-size: 1.1em;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.msg {
+    display: flex;
+    align-items: start;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.msgU {
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.text {
+    max-width: 80%;
+}
+
+.text p {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 20px;
+    line-height: 1.5;
+}
+
+.timeMSG {
+    text-align: right;
+    font-size: 0.7em;
+    margin-right: 20px;
+    margin-top: 5px;
+    color: #8a8a8a;
+}
+
+.profileU {
+
+    padding: 12px;
+    background-color: rgb(255, 102, 0);
+    display: inline-block;
+    border-radius: 50%;
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+    border: 2px solid black;
+
+}
+
+.defaultMsg {
+    position: absolute;
+    bottom: 20px;
+    left: 20px
+}
+
+.msgD {
+    background-color: transparent;
+    padding: 10px 15px;
+    border: 1px solid #e63312;
+    color: #e63312;
+    border-radius: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.typing {
+    font-style: italic;
+    opacity: 0.7;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes aiBadgeAnimation {
+    0% {
+        transform: scale(1) translateY(-50%);
+    }
+
+    100% {
+        transform: scale(0.6) translateY(-50%);
+    }
+
+}

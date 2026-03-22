@@ -1,0 +1,73 @@
+.serviceSection {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-color: #1a1a1a;
+}
+
+.serivceContainer {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.sectionLabel {
+    color: #e63312;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    margin-bottom: 20px;
+}
+
+.serviceCardsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: rgba(255, 255, 255, 0.06);
+    gap: 1px;
+}
+
+.serviceIcon {
+    font-size: 2.5em;
+}
+
+.sectionTitle {
+    font-size: 3.5em;
+    line-height: 0.95;
+    margin-bottom: 70px;
+}
+
+.serviceTitle {
+    font-size: 2em;
+    margin: 25px 0px;
+
+}
+
+.serviceCard {
+    font-size: 1.2em;
+    padding: 2em;
+    cursor: pointer;
+    background-color: #1a1a1a;
+    position: relative;
+}
+
+.serviceDesc {
+    color: #8a8a8a;
+    line-height: 1.5;
+}
+
+.serviceCard:hover {
+    background-color: #2e2e2e;
+    transition: .3s ease;
+}
+
+.serviceCard::before {
+    content: " ";
+    position: absolute;
+    height: 1px;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #e63312;
+}
+
+.serviceCard:hover::before {
+    width: 100%;
+    transition: .5s ease;
+}

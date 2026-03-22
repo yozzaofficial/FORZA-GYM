@@ -10,16 +10,19 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "dotenv": "^17.3.1",
     "next": "16.2.1",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
-    "@types/node": "^20",
+    "@types/node": "^20.19.37",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   }
 }
