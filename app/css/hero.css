@@ -2,7 +2,7 @@
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding-top: 130px;
+    padding-top: 100px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100svh;
