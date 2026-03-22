@@ -10,7 +10,7 @@
 
 .mainHeaderContainer {
     width: 100%;
-    max-width: 1600px;
+    max-width: 1400px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -97,7 +97,7 @@
 }
 
 .footerContainer {
-    max-width: 1600px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 50px 0px;
 }
