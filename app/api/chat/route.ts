@@ -71,6 +71,8 @@ Use this info:
 ${context}
 
 Request: ${message}
+Translate always in the language of the message
+
 `;
     } else {
         systemPrompt = "Answer briefly and clearly using only the provided information.";
@@ -80,6 +82,7 @@ Context:
 ${context}
 
 Question: ${message}
+Translate always in the language of the message
 `;
     }
 
