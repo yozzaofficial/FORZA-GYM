@@ -46,40 +46,40 @@ export async function POST(req: Request) {
     let userPrompt = "";
 
     if (isWorkout) {
-        systemPrompt = "Sei un personal trainer esperto.";
+        systemPrompt = "You are an expert personal trainer.";
 
         userPrompt = `
-Crea una scheda di allenamento ordinata.
+Create a structured workout plan.
 
-Formato obbligatorio:
+Required format:
 
-Giorno 1:
-- Esercizio — serie x ripetizioni
-- Esercizio — serie x ripetizioni
+Day 1:
+- Exercise — sets x reps
+- Exercise — sets x reps
 
-Giorno 2:
-- Esercizio — serie x ripetizioni
+Day 2:
+- Exercise — sets x reps
 
-Regole:
-- Max 3-4 giorni
-- Vai a capo tra i giorni
-- Usa trattini
-- Sii chiaro e ordinato
-- NIENTE testo inutile
+Rules:
+- Max 3-4 days
+- Add a line break between days
+- Use dashes
+- Be clear and organized
+- NO unnecessary text
 
-Usa queste info:
+Use this info:
 ${context}
 
-Richiesta: ${message}
+Request: ${message}
 `;
     } else {
-        systemPrompt = "Rispondi in modo breve e chiaro usando solo le informazioni fornite.";
+        systemPrompt = "Answer briefly and clearly using only the provided information.";
 
         userPrompt = `
-Contesto:
+Context:
 ${context}
 
-Domanda: ${message}
+Question: ${message}
 `;
     }
 
