@@ -24,12 +24,38 @@ async function getEmbedding(text: string) {
     return json.data[0].embedding;
 }
 
+async function detectLanguage(text: string): Promise<string> {
+    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+            "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            model: "gpt-4o-mini",
+            messages: [
+                {
+                    role: "user",
+                    content: `Detect the language of this text and reply with ONLY the language name in English (e.g. "Italian", "English", "Spanish"). Text: "${text}"`
+                }
+            ],
+            max_tokens: 10
+        })
+    });
+
+    const json = await res.json();
+    return json.data?.[0]?.text ?? json.choices[0].message.content.trim();
+}
+
 export async function POST(req: Request) {
     const { message } = await req.json();
 
     const isWorkout = message.toLowerCase().includes("scheda") || message.toLowerCase().includes("plan") || message.toLowerCase().includes("workout");
 
-    const queryEmbedding = await getEmbedding(message);
+    const [queryEmbedding, detectedLanguage] = await Promise.all([
+        getEmbedding(message),
+        detectLanguage(message)
+    ]);
 
     const results = embeddings.map((e: any) => ({
         text: e.text,
@@ -46,7 +72,7 @@ export async function POST(req: Request) {
     let userPrompt = "";
 
     if (isWorkout) {
-        systemPrompt = "You are an expert personal trainer. Always reply in the same language the user used in their message, even if the context is in Italian.";
+        systemPrompt = `You are an expert personal trainer. You MUST always reply in ${detectedLanguage} only. Never use any other language, even if the context data is in a different language.`;
 
         userPrompt = `Create a workout plan using this data:
 ${context}
@@ -58,16 +84,16 @@ Day 1:
 - Exercise — sets x reps
 
 Rules: max 3-4 days, dashes only, no extra text.
-IMPORTANT: Reply in the same language as the request above.`;
+IMPORTANT: Reply in ${detectedLanguage} only.`;
 
     } else {
-        systemPrompt = "Answer briefly and clearly using only the provided information. Always reply in the same language the user used in their message, even if the context is in Italian.";
+        systemPrompt = `Answer briefly and clearly using only the provided information. You MUST always reply in ${detectedLanguage} only. Never use any other language, even if the context data is in a different language.`;
 
         userPrompt = `Context:
 ${context}
 
 Question: ${message}
-IMPORTANT: Reply in the same language as the question above.`;
+IMPORTANT: Reply in ${detectedLanguage} only.`;
     }
 
     const res = await fetch("https://api.openai.com/v1/chat/completions", {
