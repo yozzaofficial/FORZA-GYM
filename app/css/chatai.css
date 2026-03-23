@@ -1,6 +1,5 @@
 .chatContainer {
     width: 700px;
-
 }
 
 .chatHeader {
@@ -54,7 +53,8 @@
     left: 50%;
     top: 120px;
     border: 1px solid #8a8a8a3c;
-    border: 10px
+    border: 10px;
+    transform: translateX(-50%);
 }
 
 .chatMessages {
@@ -191,4 +191,24 @@
         transform: scale(0.6) translateY(-50%);
     }
 
+}
+
+@media (max-width:1100px) {
+    .chatContainer {
+        width: 500px;
+    }
+}
+
+@media (max-width:550px) {
+    .chatContainer {
+        width: 300px;
+    }
+
+    .chatMessages {
+        height: 300px;
+    }
+
+    .coachAISection {
+        padding-bottom: 200px;
+    }
 }

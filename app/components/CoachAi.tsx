@@ -41,7 +41,8 @@ export default function CoachAi() {
                             Nutrition, recovery, and supplementation: answers based on your profile and your specific goals.</p>                        </div>
                 </div>
             </div>
-            <ChatAI />
+
         </div>
+        <ChatAI />
     </section>
 }

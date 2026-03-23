@@ -15,7 +15,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px 0px;
-
     background-color: black;
     z-index: 100;
 }
@@ -138,4 +137,50 @@
     padding-top: 50px;
     display: flex;
     justify-content: space-between;
+}
+
+@media (max-width:850px) {
+    .mainNav ul {
+        gap: 20px;
+    }
+}
+
+@media (max-width:600px) {
+    .mainNav ul {
+        gap: 10px;
+    }
+
+    .mainNav ul li.getStartedButton a {
+        color: white;
+        background-color: #e63312;
+        padding: 5px 10px;
+        border-radius: 3px;
+    }
+}
+
+@media (max-width:450px) {
+    .profile {
+        padding: 5px;
+    }
+
+    .profile::after {
+        content: " ";
+        width: 5px;
+        height: 5px;
+    }
+
+    .mainNav ul li.getStartedButton a {
+        padding: 2px 5px;
+    }
+
+    .logo {
+        letter-spacing: 1.2px;
+    }
+
+    .mainNav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        gap: 10px;
+    }
 }

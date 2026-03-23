@@ -7,9 +7,10 @@
 
 .coachAIContainer {
     max-width: 1400px;
+    width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .aiBadge {
@@ -79,6 +80,10 @@
     top: 0;
 }
 
+.aiIntro {
+    width: max-content;
+}
+
 .aiFeature-icon {
     font-size: 1.5em;
     padding-bottom: 40px;
@@ -104,4 +109,8 @@
         transform: scale(0.6) translateY(-50%);
     }
 
+}
+
+@media (max-width:1100px) {
+    .coachAIContainer {}
 }

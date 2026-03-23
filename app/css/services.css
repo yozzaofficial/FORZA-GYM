@@ -72,3 +72,10 @@
     width: 100%;
     transition: .5s ease;
 }
+
+@media (max-width:500px) {
+    .serviceCardsContainer {
+        grid-template-columns: 1fr 1fr;
+
+    }
+}

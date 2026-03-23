@@ -9,7 +9,6 @@
     display: flex;
     justify-content: center;
     gap: 50px;
-
 }
 
 .trainerCard {
@@ -45,4 +44,18 @@
 .trainername {
     font-size: 2.2em;
     letter-spacing: 1.2px;
+}
+
+@media (max-width:850px) {
+    .trainerCard {
+        min-height: 300px;
+        width: 100%;
+        max-width: 326px;
+
+    }
+
+    .trainersList {
+        flex-wrap: wrap;
+
+    }
 }
