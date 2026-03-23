@@ -46,7 +46,7 @@ export async function POST(req: Request) {
     let userPrompt = "";
 
     if (isWorkout) {
-        systemPrompt = "You are an expert personal trainer. Always reply in the same language the user used in their message.";
+        systemPrompt = "You are an expert personal trainer. Always reply in the same language of the request";
 
         userPrompt = `
 Create a structured workout plan.
@@ -74,7 +74,7 @@ Request: ${message}
 
 `;
     } else {
-        systemPrompt = "Answer briefly and clearly using only the provided information. Always reply in the same language the user used in their message.";
+        systemPrompt = "Answer briefly and clearly using only the provided information. Always reply in the same language of the question";
 
         userPrompt = `
 Context:
