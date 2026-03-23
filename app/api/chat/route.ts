@@ -27,7 +27,7 @@ async function getEmbedding(text: string) {
 export async function POST(req: Request) {
     const { message } = await req.json();
 
-    const isWorkout = message.toLowerCase().includes("scheda");
+    const isWorkout = message.toLowerCase().includes("scheda") || message.toLowerCase().includes("plan") || message.toLowerCase().includes("workout");
 
     const queryEmbedding = await getEmbedding(message);
 
@@ -46,40 +46,28 @@ export async function POST(req: Request) {
     let userPrompt = "";
 
     if (isWorkout) {
-        systemPrompt = "You are an expert personal trainer. The context data may be in Italian, but you MUST always reply in the same language the user used in their message.";
-        userPrompt = `
-Create a structured workout plan.
+        systemPrompt = "You are an expert personal trainer. Always reply in the same language the user used in their message, even if the context is in Italian.";
 
-Required format:
-
-Day 1:
-- Exercise — sets x reps
-- Exercise — sets x reps
-
-Day 2:
-- Exercise — sets x reps
-
-Rules:
-- Max 3-4 days
-- Add a line break between days
-- Use dashes
-- Be clear and organized
-- NO unnecessary text
-
-Use this info:
+        userPrompt = `Create a workout plan using this data:
 ${context}
 
 Request: ${message}
 
-`;
+Format:
+Day 1:
+- Exercise — sets x reps
+
+Rules: max 3-4 days, dashes only, no extra text.
+IMPORTANT: Reply in the same language as the request above.`;
+
     } else {
-        systemPrompt = "Answer briefly and clearly using only the provided information. The context data may be in Italian, but you MUST always reply in the same language the user used in their message.";
-        userPrompt = `
-Context:
+        systemPrompt = "Answer briefly and clearly using only the provided information. Always reply in the same language the user used in their message, even if the context is in Italian.";
+
+        userPrompt = `Context:
 ${context}
 
 Question: ${message}
-`;
+IMPORTANT: Reply in the same language as the question above.`;
     }
 
     const res = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -100,7 +88,7 @@ Question: ${message}
                     content: userPrompt
                 }
             ],
-            max_tokens: isWorkout ? 400 : 150
+            max_tokens: isWorkout ? 600 : 150
         })
     });
 
